@@ -1,0 +1,27 @@
+# PDF Processing Dependencies for RAG Application
+# These packages are required to use PDFFileLoader instead of TextFileLoader
+
+# Primary PDF processing library (better text extraction)
+pdfplumber>=0.9.0
+
+# Alternative PDF processing library (faster but less accurate)
+PyPDF2>=3.0.0
+
+# Existing dependencies from the original RAG application
+openai>=1.0.0
+python-dotenv>=1.0.0
+numpy>=1.21.0
+nest-asyncio>=1.5.0
+
+# Optional: Additional PDF processing libraries
+# Uncomment if you need more advanced PDF features
+
+# For better OCR support (if PDFs contain scanned images)
+# pytesseract>=0.3.10
+# Pillow>=9.0.0
+
+# For handling encrypted PDFs
+# cryptography>=3.4.0
+
+# For better text extraction from complex layouts
+# pdf2image>=1.16.0 
