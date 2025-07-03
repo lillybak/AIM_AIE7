@@ -1,0 +1,67 @@
+    5  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    6  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+  110  git
+  111  which git
+  352  git clone git@github.com:lillybak/AIM_AIE7.git
+  358  git clone git@github.com:lillybak/AIM_AIE7.git
+  372  git remote add upstream git@github.com:AI-Maker-Space/AIE7.git
+  374  git remote -v
+  375  git pull upstream main
+  377  git push origin main
+  379  git clone git@github.com:lillybak/AIE-Challenge.git
+  383  git remote add upstream git@github.com:AI-Maker-Space/The-AI-Engineer-Challenge.git
+  385  git pull upstream main
+  386  git push origin main
+  387  git remote -v
+  425  git status
+  428  git status
+  429  git remote -v
+  431  git pull upstream main
+  473  vi .gitignore
+  597* git status
+  598* git add .
+  600* git status
+  601* git commit -m "assignement 2"
+  609  git add README.md
+  610  git commit -m "AIE7 Readme"
+  611  git config --global user.email lilly_bakalis@hotmail.com
+  612  git branch -M main
+  613  git remote add origin git@github.com:lillybak/AIM_AIE7.git
+  614  git push -u origin main
+  616  git remote -v
+  617  git pull upstream main
+  623  history | grep git
+  641  man git
+  645  git pull upstream main
+  651  git pull upstream main
+  654  git commit -m "all 02 files"
+  655  git config --global user.email "lilly_bakalis@hotmail.com"
+  656  git config --global user.name "Lilly Bakalis"
+  657  git pull upstream main
+  658  git commit
+  659  git commit -m "all 02 files"
+  660  git pull upstream main
+  661  git stash
+  662  git pull upstream main
+  663  git config --list
+  664  git pull --rebase --allow-unrelated-histories upstream main
+  665  git rm 02_Embeddings_and_RAG/uv.lock
+  666  git rebase --continue
+  667  git config --list
+  668  git config pull.rebase true
+  669  git config push origin main
+  670  git push origin main
+  671  git config --list --show-origin | grep -n '^push'
+  672  vi .git/config
+  675  cd .git
+  677  grep -R "push" .git
+  679  git config --global --edit
+  680  git pull --rebase upstream main
+  682  git pull --rebase upstream main
+  683  git status
+  684  cd .git
+  685  git config --global --edit
+  697  vi .gitconfig
+  705  git pull upstream main
+  git rm --cached filename_or_path     # If you want the local file to remain
+But just git rm, removes the local file, so be careful
