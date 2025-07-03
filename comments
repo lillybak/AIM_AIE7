@@ -1,0 +1,12 @@
+To comment in notebook cell:
+
+Summary Table:
+
+
+| Action                | Vim Keys                  | Command Palette        |
+|-----------------------|---------------------------|------------------------|
+| Comment lines         | Shift+V, select, :s/^/# / | "Toggle Line Comment"  |
+| Uncomment lines       | Shift+V, select, :s/^# // | "Toggle Line Comment"  |
+| Comment whole cell    | ggVG, :s/^/# /            | "Toggle Line Comment"  |
+
+Thelast one works after ggVG do Ctrl+ /
