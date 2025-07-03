@@ -1,0 +1,9 @@
+for i, chunk in enumerate(text_chunks):
+    text_metadata.append({
+        "source": "PMarcaBlogs.txt",
+        "source_type": "text",
+        "chunk_id": i,
+        "total_chunks": len(text_chunks),
+        "author": "Marc Andreessen",
+        "topic": "startups and business"
+    })
