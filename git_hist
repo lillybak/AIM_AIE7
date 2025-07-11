@@ -118,6 +118,18 @@ Run the reflog to see where HEAD was pointing before the cleanup:
 git reflog
 
 ------------------------------------------------------------------------------
+(Optional cleanup: you have a typo’d branch s04-assignement. To rename it locally so it tracks the correctly spelled s04-assignment)
+
+bash
+Copy
+Edit
+git branch -m s04-assignement s04-assignment
+And, if you’ve already pushed the typo’d name, delete it from origin and push the renamed one:
+
+git push origin --delete s04-assignement
+git push -u origin s04-assignment
+
+------------------------------------------------------------------------------
 
     5  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     6  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
