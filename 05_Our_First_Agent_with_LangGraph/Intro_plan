@@ -1,0 +1,143 @@
+Now let's move to the next step - skimming through the notebook to identify all the activities and questions you'll need to complete. Let me analyze the notebook structure and find all the tasks for you.
+Read file: .ipynb_checkpoints/Introduction_to_LangGraph_for_Agents_Assignment_Version-checkpoint.ipynb
+Read file: .ipynb_checkpoints/Introduction_to_LangGraph_for_Agents_Assignment_Version-checkpoint.ipynb
+Read file: .ipynb_checkpoints/Introduction_to_LangGraph_for_Agents_Assignment_Version-checkpoint.ipynb
+Perfect! Now I have a complete overview of the notebook structure. Let me create a comprehensive summary of all the activities and questions you need to complete.
+
+## 📋 **Complete Task Inventory for the LangGraph Assignment**
+
+Based on my analysis of the notebook, here are **ALL** the activities and questions you need to complete:
+
+### **🤝 Breakout Room #1 - Core Agent Building**
+
+**🏗️ Activity #1** (Cell 9):
+- **Task**: Add tools to the toolbelt 
+- **What to do**: The code is already provided, but you may need to explain what each tool does
+- **Location**: After "Creating our Tool Belt" section
+
+**❓ Question #1** (Cell 15):
+- **Question**: "How does the model determine which tool to use?"
+- **What to do**: Add `##### ✅ Answer:` and explain the tool selection mechanism
+
+**❓ Question #2** (Cell after graph creation):
+- **Question**: "Is there any specific limit to how many times we can cycle? If not, how could we impose a limit to the number of cycles?"
+- **What to do**: Add `##### ✅ Answer:` and explain cycle limits
+
+**🏗️ Activity #2** (After first agent run):
+- **Task**: "Please write out the steps the agent took to arrive at the correct answer"
+- **What to do**: Document the agent's execution flow step by step
+
+### **🤝 Breakout Room #2 - Evaluation & Advanced Features**
+
+**🏗️ Activity #3** (Cell 48):
+- **Task**: "Please create a dataset in the above format with at least 5 questions"
+- **What to do**: Create your own evaluation dataset following the provided format
+
+**❓ Question #3** (Cell 51):
+- **Question**: "How are the correct answers associated with the questions? NOTE: Feel free to indicate if this is problematic or not"
+- **What to do**: Add `##### ✅ Answer:` and explain the answer association mechanism
+
+**❓ Question #4** (Cell 54):
+- **Question**: "What are some ways you could improve this metric as-is? NOTE: Alternatively you can suggest where gaps exist in this method."
+- **What to do**: Add `##### ✅ Answer:` and suggest improvements to the evaluation metric
+
+**🏗️ Activity #4** (Cell 70):
+- **Task**: "Please write what is happening in our `tool_call_or_helpful` function!"
+- **What to do**: Add `##### ✅ Answer:` and explain the function's logic
+
+**🏗️ Activity #5** (Cell 63):
+- **Task**: "Please write markdown for the following cells to explain what each is doing"
+- **What to do**: Replace all "##### YOUR MARKDOWN HERE" cells (Cells 64, 66, 68, 71, 73, 75, 77) with explanations of what each code cell does
+
+### **📊 Summary Count**
+- **Total Activities**: 5 (Activity #1, #2, #3, #4, #5)
+- **Total Questions**: 4 (Question #1, #2, #3, #4)
+- **Markdown Replacements**: 7 cells (for Activity #5)
+- **Grand Total**: 16 places where you need to add content
+
+### **🎯 Key Areas to Focus On**
+1. **Tool selection mechanism** - How the LLM chooses which tool to use
+2. **Agent execution flow** - Step-by-step breakdown of agent reasoning
+3. **Evaluation dataset creation** - Creating meaningful test cases
+4. **Helpfulness function logic** - Understanding the loop control mechanism
+5. **Code explanations** - Clear descriptions of what each graph component does
+
+### **💡 Pro Tips for Success**
+- Run each code cell incrementally to understand the flow
+- Keep your answers concise but complete
+- Test your agent with different queries to understand its behavior
+- Pay attention to the LangSmith evaluation results
+- Make sure your helpfulness check prevents infinite loops
+
+You're now ready to work through the notebook systematically! Would you like me tNow let's move to the next step - skimming through the notebook to identify all the activities and questions you'll need to complete. Let me analyze the notebook structure and find all the tasks for you.
+Read file: .ipynb_checkpoints/Introduction_to_LangGraph_for_Agents_Assignment_Version-checkpoint.ipynb
+Read file: .ipynb_checkpoints/Introduction_to_LangGraph_for_Agents_Assignment_Version-checkpoint.ipynb
+Read file: .ipynb_checkpoints/Introduction_to_LangGraph_for_Agents_Assignment_Version-checkpoint.ipynb
+Perfect! Now I have a complete overview of the notebook structure. Let me create a comprehensive summary of all the activities and questions you need to complete.
+
+## 📋 **Complete Task Inventory for the LangGraph Assignment**
+
+Based on my analysis of the notebook, here are **ALL** the activities and questions you need to complete:
+
+### **🤝 Breakout Room #1 - Core Agent Building**
+
+**🏗️ Activity #1** (Cell 9):
+- **Task**: Add tools to the toolbelt 
+- **What to do**: The code is already provided, but you may need to explain what each tool does
+- **Location**: After "Creating our Tool Belt" section
+
+**❓ Question #1** (Cell 15):
+- **Question**: "How does the model determine which tool to use?"
+- **What to do**: Add `##### ✅ Answer:` and explain the tool selection mechanism
+
+**❓ Question #2** (Cell after graph creation):
+- **Question**: "Is there any specific limit to how many times we can cycle? If not, how could we impose a limit to the number of cycles?"
+- **What to do**: Add `##### ✅ Answer:` and explain cycle limits
+
+**🏗️ Activity #2** (After first agent run):
+- **Task**: "Please write out the steps the agent took to arrive at the correct answer"
+- **What to do**: Document the agent's execution flow step by step
+
+### **🤝 Breakout Room #2 - Evaluation & Advanced Features**
+
+**🏗️ Activity #3** (Cell 48):
+- **Task**: "Please create a dataset in the above format with at least 5 questions"
+- **What to do**: Create your own evaluation dataset following the provided format
+
+**❓ Question #3** (Cell 51):
+- **Question**: "How are the correct answers associated with the questions? NOTE: Feel free to indicate if this is problematic or not"
+- **What to do**: Add `##### ✅ Answer:` and explain the answer association mechanism
+
+**❓ Question #4** (Cell 54):
+- **Question**: "What are some ways you could improve this metric as-is? NOTE: Alternatively you can suggest where gaps exist in this method."
+- **What to do**: Add `##### ✅ Answer:` and suggest improvements to the evaluation metric
+
+**🏗️ Activity #4** (Cell 70):
+- **Task**: "Please write what is happening in our `tool_call_or_helpful` function!"
+- **What to do**: Add `##### ✅ Answer:` and explain the function's logic
+
+**🏗️ Activity #5** (Cell 63):
+- **Task**: "Please write markdown for the following cells to explain what each is doing"
+- **What to do**: Replace all "##### YOUR MARKDOWN HERE" cells (Cells 64, 66, 68, 71, 73, 75, 77) with explanations of what each code cell does
+
+### **📊 Summary Count**
+- **Total Activities**: 5 (Activity #1, #2, #3, #4, #5)
+- **Total Questions**: 4 (Question #1, #2, #3, #4)
+- **Markdown Replacements**: 7 cells (for Activity #5)
+- **Grand Total**: 16 places where you need to add content
+
+### **🎯 Key Areas to Focus On**
+1. **Tool selection mechanism** - How the LLM chooses which tool to use
+2. **Agent execution flow** - Step-by-step breakdown of agent reasoning
+3. **Evaluation dataset creation** - Creating meaningful test cases
+4. **Helpfulness function logic** - Understanding the loop control mechanism
+5. **Code explanations** - Clear descriptions of what each graph component does
+
+### **💡 Pro Tips for Success**
+- Run each code cell incrementally to understand the flow
+- Keep your answers concise but complete
+- Test your agent with different queries to understand its behavior
+- Pay attention to the LangSmith evaluation results
+- Make sure your helpfulness check prevents infinite loops
+
+You're now ready to work through the notebook systematically! Would you like me to help you tackle any specific activity or question first?o help you tackle any specific activity or question first?

@@ -1,0 +1,1 @@
+![Diagram][imperativeVSdeclarative.svg]
