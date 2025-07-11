@@ -1,3 +1,124 @@
+    ✅ To merge (most common, easiest)
+git pull origin main
+✅ To force reset (discard local commits!)
+git fetch origin
+git reset --hard origin/main
+
+✅ Step 1: Check your local changes
+git log --oneline --graph --decorate --all
+
+What does change timestamps?
+Making new commits on a branch.
+
+Rewriting history (e.g., git rebase, git reset --hard, git filter-branch, git commit --amend, or git push --force).
+
+| Command                                      | Will it change timestamps? |
+| -------------------------------------------- | -------------------------- |
+| `git checkout`                               | ❌ No                       |
+| `git push`                                   | ❌ No                       |
+| `git commit`                                 | ✅ Yes (new commit)         |
+| `git rebase`, `reset --hard`, `push --force` | ✅ Yes (rewrite)            |
+------------------------------------------------------------------------------
+
+git fetch origin #from my github
+
+# Check branch list
+git branch -a
+
+# Make sure your s02 and s04 are pushed
+git checkout s02
+git push origin s02
+
+git checkout s04
+git push origin s04
+
+
+This ensures your assignment branches exist on GitHub with all history and timestamps.
+------------------------------------------------------------------------------
+
+✅ 3️⃣ Clean up main branch to match teacher
+
+I accidentally added with merge all of teacher's branch inside my s02-assignemnt
+repo
+Undo:
+
+Step 1️⃣ Find the commit before the merge
+Run:
+git log --oneline
+
+Stash = a stack of snapshots of your working directory and index (staged files).
+
+You can push your current work onto the stash, switch branches, then later pop or apply it back.
+
+i🛠️ Common Commands
+Command	What it does
+git stash push (or just git stash)	Save your local modifications and reset your working directory to match HEAD
+git stash list	Show all stashed snapshots (e.g. stash@{0}, stash@{1}, …)
+git stash pop [stash@{n}]	Re-apply the top (or specified) stash and remove it from the stash list
+git stash apply [stash@{n}]	Re-apply the top (or specified) stash without removing it from the stash list
+git stash drop [stash@{n}]	Delete a specific stash snapshot from the list
+git stash clear	Remove all stashes
+
+------------------------------------------------------------------------------
+Why you see prior directories
+History is cumulative
+When you branched off main, that branch’s snapshot included every folder that existed at that point—including 00_…, 01_…, 02_…, 03_…, and 04_….
+
+Merges don’t delete by default
+Even if later commits on main removed some of those, unless you merged or reset your branch to a commit after they were gone, your branch still has them.
+
+Deleting is an explicit action
+To have your branch show only 04_*, you must commit one of:
+
+Removal commits that git rm -r all the other directories, or
+
+A new “orphan” root commit that contains only 04_*, or
+
+A history rewrite (via git filter-branch or git filter-repo) to strip everything else out entirely.
+------------------------------------------------------------------------------
+How to make s04-assignement contain only 04_*
+A) Simple removal commit
+(if you want to keep history but clean working tree going forward)
+
+git checkout s04-assignement
+git rm -r 00_* 01_* 02_* 03_* 05_* 06_*
+git commit -m "Keep only 04_* in s04-assignement"
+git push --force origin s04-assignement
+
+After that, on disk you’ll see only:
+04_Production_RAG  README.md  (and any files you kept)
+------------------------------------------------------------------------------
+B) Orphan branch (fresh history)
+git checkout --orphan s04-clean
+git rm -rf .            # remove all files from index
+cp -r 04_Production_RAG .    # copy only the 04 folder in
+git add 04_Production_RAG
+git commit -m "Initial clean s04 assignment"
+git push --force origin s04-clean
+=============================================================================
+
+You have two easy ways to “look inside” any branch without disturbing your work:
+
+1) List tracked files in s02-assignment (no checkout needed)
+
+git ls-tree --name-only -r s02-assignment
+
+This will print a flat list of every file that Git is tracking in the s02-assignment branch.
+~~~~~~~~~~~~~~~~~~~~~~~~
+2) Switch into s02-assignment and browse its working tree
+
+git checkout s02-assignment
+
+Then you can ls (or ls -la) to see its top‐level folders and files on disk exactly as they exist in that branch.
+------------------------------------------------------------------------------
+
+2. Find the commit just before you removed the folder
+Run the reflog to see where HEAD was pointing before the cleanup:
+
+git reflog
+
+------------------------------------------------------------------------------
+
     5  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     6  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   110  git
@@ -18,10 +139,10 @@
   429  git remote -v
   431  git pull upstream main
   473  vi .gitignore
-  597* git status
-  598* git add .
-  600* git status
-  601* git commit -m "assignement 2"
+  597  git status
+  598  git add .
+  600  git status
+  601  git commit -m "assignement 2"
   609  git add README.md
   610  git commit -m "AIE7 Readme"
   611  git config --global user.email lilly_bakalis@hotmail.com
@@ -63,5 +184,145 @@
   685  git config --global --edit
   697  vi .gitconfig
   705  git pull upstream main
-  git rm --cached filename_or_path     # If you want the local file to remain
-But just git rm, removes the local file, so be careful
+  710  history | grep git > git_hist
+  711  vi git_hist
+  724  git status
+  725  git push
+  733  cd .git
+  750  cd .git
+  756  cd .git
+  759  git config --list --show-origin
+  763  git push
+  765  git push
+  770  git push
+  771  git status
+  772  git add 02_Embeddings_and_RAG/
+  773  git add .
+  774  git status
+  775  git commit -m "Added in 02 PDF reading solutions and fixes, and 3 new files"\n
+  776  git push
+  777  git diff --cashed
+  778  git diff --cached
+  814  git status
+  817  git status
+  820  git push
+  821  git status
+  825  git diff Pythonic_RAG_Assignment.ipynb
+  827  git add -A
+  831  git status
+  833  git status
+  834  git add Pythonic_RAG_Assignment.ipynb
+  835  git add Pythonic_RAG_Assignment_.py
+  836  git commit -m "Updated Pythonic_RAG_Assignment.ipynb amd added the same as .py"
+  837  git push origin main
+  838  git checkout -b s02-assignement
+  839  git checkout -b s02-assignment
+  840  git commit -m "02 Homework Pythonic_RAG_Assignment.ipynb"
+  841  git add Pythonic_RAG_Assignment.ipynb
+  842  git commit -m "02 Homework Pythonic_RAG_Assignment.ipynb"
+  843  git status
+  845  git add -u
+  846  git commit -m "02 Homework Pythonic_RAG_Assignment.ipynb"
+  847  git status
+  848  git push origin s02-assignment
+  850  git log
+  851  git log --graph
+  852  git log --graph --oneline
+  853  git status
+  854  git push origin s02-assignment
+  855  git pull origin s02-assignment
+  858  git status
+  860  git checkout main
+  861  git status
+  868  history | grep "git pull"
+  877  git pull --rebase upstream main
+  925  cd .git
+  929  vi .gitignore
+  934  vi .gitignore
+ 1048  vi .gitignore
+ 1060  vi .gitattributes
+ 1061  la .git
+ 1087  vi .gitignore
+ 1088  mv .gitignore .gitignore_old
+ 1093  cp_file_to_dirs.sh .gitignore ~/AIE7-BC/AIM_AIE7
+ 1094  ./cp_file_to_dirs.sh .gitignore ~/AIE7-BC/AIM_AIE7
+ 1131  cp .gitignore ..
+ 1134  vi .gitignore
+ 1135  vi .gitignore_old
+ 1136  vi .gitignore
+ 1141  cp .gitignore 0*
+ 1145  vi .gitignore
+ 1148  for d in [0]*; do\n  if [ -f "$d/.gitignore" ]; then\n    echo "Would remove $d/.gitignore"\n  fi\ndone\n
+ 1151  rm_file_indirs.sh . .gitignore
+ 1152  ./rm_file_indirs.sh . .gitignore
+ 1158  h | grep git
+ 1159  git  checkout -b s04-assignement
+ 1326  h | grep git
+ 1335  git status
+ 1336  git --help
+ 1337  git switch s02-assignment
+ 1338  git commit -m "02 Homework Pythonic_RAG_Assignment.ipynbi after commenting"
+ 1339  git commit -a
+ 1340  git commit -a "commiting all new  files and clean_up of 02 assignment"
+ 1341  git commit -m "commiting all new  files and clean_up of 02 assignment"
+ 1343  git add Pythonic_RAG_Assignment.ipynb
+ 1344  git commit -m " clean_up of 02 assignment"
+ 1345  git push 
+ 1346  git push --set-upstream origin s02-assignment
+ 1350  git switch s04-assignement
+ 1440  find /home/olb -name ".git" -type d 2>/dev/null
+ 1446  git status
+ 1578  git status
+ 1579  git add Assignment_Introduction_to_LCEL_and_LangGraph_LangChain_Powered_RAG.ipynb
+ 1580  git add LangSmith_and_Evaluation.ipynb
+ 1581  git commit -m "Adding first draft of assignments"
+ 1582  git push 
+ 1583  git push upstream origin
+ 1586  git add -a
+ 1587  git add Assignment_Introduction_to_LCEL_and_LangGraph_LangChain_Powered_RAG.ipynb
+ 1588  git add LangSmith_and_Evaluation.ipynb
+ 1589  git commit -m "Adding assignments"
+ 1590  git push --set-upstream origin s02-assignment
+ 1591  git push --set-upstream origin s04-assignment
+ 1592  git push 
+ 1595  git pull --rebase upstream main
+ 1596  git status
+ 1599  git switch main
+ 1600  git pull
+ 1601  git stash
+ 1602  git pull
+ 1606  git pull
+ 1607  git remote -v
+ 1608  git pull upstream main
+ 1614  git activate
+ 1615  git checkout -b s05-assignment
+ 1616  git status
+ 1617  git branch
+ 1703  git pull upstream main
+ 1704  git status
+ 1732  git pull upstream main
+ 1738  git deactivate
+ 1741  git stash
+ 1753* git pull upstream main
+ 1793* git status
+ 1796* git add .
+ 1805  git status
+ 1808  git status
+ 1809  git add .
+ 1810  git status
+ 1812  git checkout main
+ 1813  git branch -d
+ 1814  git branch -d s05-assignment
+ 1815  git branch -D s05-assignment
+ 1817  git branch
+ 1818  git branch -D s05-assignement
+ 1819  git branch
+ 1820  git branch -D s02-assignement
+ 1821  git bramch
+ 1822  git branch
+ 1823  git checkout -b s05-assignment
+ 1824  git status
+ 1825  git switch s02-assignment
+ 1826  git add 05_Our_First_Agent_with_LangGraph/Introduction_to_LangGraph_for_Agents_Assignment_Version.ipynb
+ 1827  git add Introduction_to_LangGraph_for_Agents_Assignment_Version.ipynb
+ 1828  git commit -m "1st 05 commit"
