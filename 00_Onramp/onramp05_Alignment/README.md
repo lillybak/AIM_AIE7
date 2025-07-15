@@ -1,51 +1,79 @@
-# RLHF Pipeline
+# Session 1: Cursor IDE Setup, GitHub & Git Basics
 
-🌖 **Reinforcement Learning from Human Feedback (RLHF) with Llama 3.1 8B Instruct**
+<details>
+  <summary>📑 **Table of Contents**</summary>
 
----
+- [Cursor](#cursor)
+- [SSH Setup](#ssh-setup)
+- [Git Workflow](#git-workflow)
+  - [Create a Remote Architecture](#create-a-remote-architecture)
+  - [Clone Your Local Repository](#clone-your-local-repository)
+  - [Add the Upstream Remote (one-time)](#add-the-upstream-remote-one-time)
+  - [Pull the Upstream Repo](#pull-the-upstream-repo)
+  - [Use Sync Flow — Every Class](#use-sync-flow--every-class)
+    - [Pull fresh starter code](#pull-fresh-starter-code)
+    - [Develop locally](#develop-locally)
+    - [Stage & commit changes](#stage--commit-changes)
+    - [Push to your repository](#push-to-your-repository)
 
-## Overview
-This project demonstrates how to fine-tune a large language model (Llama 3.1 8B Instruct) using Reinforcement Learning from Human Feedback (RLHF) to reduce harmful or toxic outputs. The workflow includes training a reward model, running PPO-based RLHF, and evaluating toxicity reduction.
+</details>
 
-## Requirements
-- **Google Colab** (Pro/Pro+ recommended)
-- **A100 GPU** (Required for model size and speed)
-- **Hugging Face Account & Access Token** (for model and dataset downloads)
-- **Weights & Biases (wandb) Account & API Key** (for experiment tracking)
+## Cursor
+- Open & navigate multi-file projects with ease.  
+- Ask the **AI Chat** panel for explanations, refactors, or bug fixes.  
+- Scaffold quick apps, then iterate and debug until they run cleanly.  
+- Chat about individual functions or whole scripts to deepen understanding.  
 
-## Quickstart
-1. **Open the Notebook**
-   - Use the provided notebook: `Reward_Model_and_PPO_Training_RLHF_in_Practice.ipynb`
-   - [Open in Colab](https://colab.research.google.com/drive/1h6XUz36PW85ZgcyCxRk_ddBtkaTKuR07?usp=sharing)
+## SSH Setup
+1. Generate an **SSH key pair** and save it to `~/.ssh/`.
+2. Add the **public key** to GitHub.
+3. Always clone/push with **SSH URLs** (`git@github.com:...`) for seamless, secure auth.
 
-2. **Set Up Your Environment**
-   - In Colab, select `Runtime > Change runtime type > GPU > A100`.
-   - Install required packages (the notebook will do this automatically):
-     ```python
-     !pip install -qU transformers==4.45.2 accelerate bitsandbytes peft trl==0.11 datasets tqdm
-     ```
+## Git Workflow
+* Keep your repository current without overwriting the upstream repository.
+* Guarantee you always start with the latest assignment skeleton.
 
-3. **Authenticate**
-   - **Hugging Face**: Run the cell with `notebook_login()` and paste your HF token.
-   - **Weights & Biases**: When prompted, paste your wandb API key.
+### Create a Remote Architecture
+**origin** = your personal repository (student repo)
+**upstream** = class main repo (AI-Maker-Space)
 
-4. **Workflow Steps**
-   - **Load Pretrained Model**: Llama 3.1 8B Instruct in 4-bit quantized mode.
-   - **Prepare Datasets**: Use Anthropic's `hh-rlhf` for reward modeling and AllenAI's `real-toxicity-prompts` for PPO training.
-   - **Train Reward Model**: Fine-tune a `distilroberta-base` classifier to distinguish between helpful and harmful completions.
-   - **Train with PPO**: Use the reward model to guide RLHF training of the Llama model.
-   - **Evaluate**: Generate outputs for toxic prompts and score them with a toxicity metric.
+#### Clone Your Local Repository
+```bash
+git clone <your_local_repo>
+cd <your_local_repo>
+```
 
-5. **Tips**
-   - Training is memory and compute intensive. Use small dataset subsets for experimentation.
-   - The notebook is designed for Colab; local runs may require significant hardware and setup.
-   - For best results, ensure your tokens are kept private and not shared in public notebooks.
+#### Add the Upstream Remote (one-time)
+```bash
+git remote add upstream git@github.com:AI-Maker-Space/AIE7.git
+```
 
-## References
-- [Hugging Face TRL Documentation](https://huggingface.co/docs/trl/main/en/reward_trainer)
-- [Anthropic hh-rlhf Dataset](https://huggingface.co/datasets/Anthropic/hh-rlhf)
-- [AllenAI Real Toxicity Prompts](https://huggingface.co/datasets/allenai/real-toxicity-prompts)
+#### Pull the Upstream Repo
+```bash
+git pull upstream main
+```
 
----
+### Use Sync Flow — Every Class
+```bash
+Go to your local repository
+cd <your_local_repo>
+```
 
-For more details, see the notebook and code comments.
+#### Pull fresh starter code
+```bash
+git pull upstream main --no-rebase --no-edit -X ours
+```
+
+#### Develop locally
+* edit, run, and debug in Cursor
+
+#### Stage & commit changes
+```bash
+git add .
+git commit -m "meaningful message"
+```
+
+#### Push to your repository
+```bash
+git push origin main
+```
