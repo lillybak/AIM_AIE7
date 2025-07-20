@@ -1,0 +1,31 @@
+MultiHopAbstractQuerySynthesizer would generate:
+"How have scientific theories on relativity evolved since Einstein's original publication?"
+Requires interpretation and synthesis across multiple sources
+Needs analytical reasoning about evolution of ideas
+vs. MultiHopSpecificQuerySynthesizer:
+"Which scientist influenced Einstein's work on relativity, and what theory did they propose?"
+Requires specific facts from multiple sources
+More straightforward factual connection
+The key distinction is that Abstract queries challenge systems to provide broader, interpretive analyses rather than just factual combinations.
+
+MultiHopAbstractQuerySynthesizer would generate:
+"How have scientific theories on relativity evolved since Einstein's original publication?"
+Requires interpretation and synthesis across multiple sources
+Needs analytical reasoning about evolution of ideas
+vs. MultiHopSpecificQuerySynthesizer:
+"Which scientist influenced Einstein's work on relativity, and what theory did they propose?"
+Requires specific facts from multiple sources
+More straightforward factual connection
+The key distinction is that Abstract queries challenge systems to provide
+broader, interpretive analyses rather than just factual combinations.
+
+i✅ Corrected:
+"broad, interpretive queries"
+"synthesizing them"
+Why These Corrections Matter:
+1. Abstract vs. Specific:
+Abstract queries require interpretive, analytical responses rather than simple fact retrieval
+Specific queries focus on concrete, factual answers
+2. Synthesizing vs. Summarizing:
+Synthesizing: Combining information from multiple sources to create new insights, interpretations, or comprehensive understanding
+Summarizing: Simply condensing information without necessarily creating new analytical insights
