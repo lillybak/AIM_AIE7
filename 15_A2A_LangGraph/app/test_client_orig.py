@@ -116,7 +116,7 @@ async def main() -> None:
             'message': {
                 'role': 'user',
                 'parts': [
-                    {'kind': 'text', 'text': 'neuromuscular'}
+                    {'kind': 'text', 'text': 'What are the latest developments in artificial intelligence?'}
                 ],
                 'message_id': uuid4().hex,
             },
@@ -136,7 +136,7 @@ async def main() -> None:
                 'parts': [
                     {
                         'kind': 'text',
-                        'text': 'musculoskeletal & nervous',
+                        'text': 'Find me recent papers on transformer architectures',
                     }
                 ],
                 'message_id': uuid4().hex,
@@ -156,7 +156,7 @@ async def main() -> None:
         second_send_message_payload_multiturn: dict[str, Any] = {
             'message': {
                 'role': 'user',
-                'parts': [{'kind': 'text', 'text': 'cardiovascular & pulmonary'}],
+                'parts': [{'kind': 'text', 'text': 'Can you summarize the key findings?'}],
                 'message_id': uuid4().hex,
                 'task_id': task_id,
                 'context_id': context_id,

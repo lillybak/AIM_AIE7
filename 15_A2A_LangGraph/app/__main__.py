@@ -50,27 +50,27 @@ def main(host, port):
             AgentSkill(
                 id='web_search',
                 name='Web Search Tool',
-                description='Search the web for current information',
+                description='Search the web for current information about physical therapy',
                 tags=['search', 'web', 'internet'],
-                examples=['What are the latest news about AI?'],
+                examples=['What are the latest news about physical therapy?'],
             ),
             AgentSkill(
                 id='arxiv_search',
                 name='Academic Paper Search',
-                description='Search for academic papers on arXiv',
+                description='Search for academic papers on arXiv and Google Scholar',
                 tags=['research', 'papers', 'academic'],
-                examples=['Find recent papers on large language models'],
+                examples=['Find recent papers on physical therapy'],
             ),
             AgentSkill(
                 id='rag_search',
                 name='Document Retrieval',
                 description='Search through loaded documents for specific information',
                 tags=['documents', 'rag', 'retrieval'],
-                examples=['What do the policy documents say about student loans?'],
+                examples=['What do the policy NPTE documents say about physical therapy exams?'],
             ),
         ]
         agent_card = AgentCard(
-            name='General Purpose Agent',
+            name='NPTE Physical Therapy Exam Professor Agent',
             description='A helpful AI assistant with web search, academic paper search, and document retrieval capabilities',
             url=f'http://{host}:{port}/',
             version='1.0.0',
