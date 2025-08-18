@@ -22,6 +22,12 @@ The purpose of my app is to provide to the user a multiple-choice QAs exactly in
 The user inputs a topic of the 14 available NPTE topics, and the agent searches with the tools to find materials to compose the multiple choise QAs.
 The helpfulness agent checks for validity, format, and relavancy and responds with Y or N. The rest of the flow is same as in the example graph.
 
+This is the response in langgraph studio, with input: "musculoskeletal". It is exactly as expected.
+
+<img src="../images/MCQAs_agent_with_helpfulness_and_references_last.png" alt="LangGraph Studio implementation" style="width: 600px; height: auto;">
+
+
+
 ## 🔧 Core Components
 
 ### 1. `agent_graph_with_helpfulness.py`
