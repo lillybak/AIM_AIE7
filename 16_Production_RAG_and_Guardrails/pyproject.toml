@@ -20,6 +20,6 @@ dependencies = [
     "tavily-python>=0.3.0",
     "arxiv>=2.1.0",
     "cryptography==44.0.3",
-    "guardrails-ai==0.5.14",
+    "guardrails-ai",
     "dotenv>=0.9.9",
 ]
