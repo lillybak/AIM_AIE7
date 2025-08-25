@@ -37,3 +37,40 @@ Together offers serverless endpoints for embedding models, we'll be using the [B
 ### ❓ Question #1: 
 
 What is the difference between serverless and dedicated endpoints?
+
+### ✅ Answer #1: 
+#### **Serverless Endpoints**  
+
+* No setup required: Can use them immediately without any configuration
+
+* No cost for setup: Free to use (pay only for actual usage)
+
+* Shared resources: Multiple users share the same infrastructure
+
+* Automatic scaling: The platform handles scaling based on demand
+
+* No management overhead: No need to worry about starting/stopping endpoints
+
+* In my codebase: openai/gpt-oss-20b (the default serverless option)
+
+#### **Dedicated Endpoints**
+
+* Requires setup: Need to manually create and configure them
+* Setup cost: Requires purchasing compute credits (e.g., $50 for T2)
+* Dedicated resources: Allows exclusive access to the infrastructure
+* Manual management: MUST control when to start/stop the endpoint
+* Auto-shutdown feature: Must set automatic shutdown timers (e.g., 1 hour) to control costs
+* Better performance: More consistent latency and throughput since you're not sharing resources
+* Custom configuration: You can optimize settings for your specific use case
+
+#### TIMER COSTS - SUT THEM DOWN!!!
+* Timer starts immediately when you deploy, not when you start using it
+* No usage = still charging: Even if you're not making API calls, you're still being charged for the dedicated resources
+
+**How to Set Automatic Shutdown**
+When Creating a Dedicated Endpoint:
+* Go to api.together.ai/models
+* Search for gpt-oss (my model) and click on it
+* Click "Create Dedicated Endpoint"
+* In the deployment settings, look for "Auto-shutdown" or "Shutdown timer"
+* Set it to a reasonable time like 1 hour or 2 hours

@@ -1,24 +1,39 @@
 [project]
 name = "17-deploying-open-source-endpoints"
 version = "0.1.0"
-description = "Add your description here"
+description = "17-deploying-open-source-endpoints"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
     "jupyter>=1.1.1",
     "openai>=1.100.2",
     "together>=1.5.25",
+    "click>=8.1.8",
+    "httpx>=0.28.1",
+    "pydantic>=2.10.6",
+    "python-dotenv>=1.1.0",
+    "uvicorn>=0.34.2",
+    "sse-starlette>=2.1.0",
+    "starlette>=0.46.2",
+    "a2a-sdk>=0.3.0",
+    "tavily-python>=0.3.0",
     "arxiv>=2.2.0",
+    "pymupdf>=1.24.10",
+    "qdrant-client>=1.8.0",
+    "tiktoken>=0.7.0",
+    "langgraph>=0.3.18",
     "langchain-community>=0.3.8",
     "langchain-core>=0.3.14",
     "langchain-openai>=0.2.8",
     "langchain-text-splitters>=0.3.2",
-    "langgraph>=0.2.60",
     "langgraph-cli[inmem]>=0.3.6",
     "langgraph-sdk>=0.1.38",
     "langsmith>=0.2.7",
-    "pymupdf>=1.24.10",
-    "python-dotenv>=1.0.1",
-    "qdrant-client>=1.8.0",
-    "tiktoken>=0.7.0",
 ]
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
