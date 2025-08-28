@@ -42,15 +42,10 @@ What is the difference between serverless and dedicated endpoints?
 #### **Serverless Endpoints**  
 
 * No setup required: Can use them immediately without any configuration
-
 * No cost for setup: Free to use (pay only for actual usage)
-
 * Shared resources: Multiple users share the same infrastructure
-
 * Automatic scaling: The platform handles scaling based on demand
-
 * No management overhead: No need to worry about starting/stopping endpoints
-
 * In my codebase: openai/gpt-oss-20b (the default serverless option)
 
 #### **Dedicated Endpoints**
@@ -63,7 +58,7 @@ What is the difference between serverless and dedicated endpoints?
 * Better performance: More consistent latency and throughput since you're not sharing resources
 * Custom configuration: You can optimize settings for your specific use case
 
-#### TIMER COSTS - SUT THEM DOWN!!!
+#### TIMER COSTS - SHUT THEM DOWN!!!
 * Timer starts immediately when you deploy, not when you start using it
 * No usage = still charging: Even if you're not making API calls, you're still being charged for the dedicated resources
 
