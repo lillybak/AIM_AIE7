@@ -65,6 +65,15 @@ Then you will need to:
 4) Modify the graph to accomodate your new node. 
 
 
+## FINAL ARCHITECURE
+
+| Component | Role | Technology | Endpoint |
+|-----------|------|------------|----------|
+| **Main App** | Agent orchestration, RAG logic, question generation | Python + LangGraph | - |
+| **LLM Service** | Model serving, text generation, embeddings | Ollama (mxbai-embed-large) | localhost:11434 |
+| **Vector DB** | Document storage, similarity search | Qdrant (Docker) | localhost:6334 |
+| **Web Search** | External knowledge retrieval | Tavily API | API calls |
+| **Documents** | Local knowledge base | JSON files | File system |
 
 
 # Ship 🚢
