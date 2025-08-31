@@ -119,3 +119,9 @@ Follow these steps to prepare and submit your homework assignment:
     + The URL to your Loom Video
     + Your Three lessons learned/not yet learned
     + The URLs to any social media posts (LinkedIn, X, Discord, etc.) ⬅️ _easy Extra Credit points!_
+
+
+## Git 
+git add .  
+git commit -m "Your research progress"  
+git push origin main  # Goes to YOUR repo  
